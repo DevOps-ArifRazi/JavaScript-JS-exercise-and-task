@@ -529,6 +529,249 @@ document.write(sum);
 
 
 
+/////////       26//01//2023         ////////
+
+
+
+
+
+
+
+
+/// /////     JAVASCRIPT OBJECT      \\\\\\
+
+
+
+//////  variable
+
+var name =  "Arif Razi";
+var age = 29;
+var cgpa = 3.1;
+var language =["Bangla","Hindi","English","Undu"];
+
+console.log(cgpa);
+
+/////   object
+
+//how create an object
+//how to print value of object
+//adding aconstractor fuction
+
+
+var student ={
+    name :  "Arif Razi",
+    age : 29,
+    cgpa : 3.1,
+    language :["Bangla","Hindi","English","Undu"]
+}
+console.log(student.name);
+
+var student1 ={
+    name :  "Arif Razi",
+    age : 29,
+    cgpa : 3.1,
+    language :["Bangla","Hindi","English","Undu"]
+}
+
+
+var student2 ={
+    name :  "Arif Razi",
+    age : 29,
+    cgpa : 3.1,
+    language :["Bangla","Hindi","English","Undu"]
+}
+
+
+var student3 ={
+    name :  "Arif Razi",
+    age : 29,
+    cgpa : 3.1,
+    language :["Bangla","Hindi","English","Undu"]
+}
+
+
+var student3 ={
+    name :  "Arif Razi",
+    age : 29,
+    cgpa : 3.1,
+    language :["Bangla","Hindi","English","Undu"]
+}
+
+
+
+
+
+//////     making a constractor 
+ 
+
+function Student(name,age,cgpa,language){
+    this.name = name;
+    this.age = age;
+    this. cgpa = cgpa;
+    this. language = language;
+}
+var student1= new Student("Arif Razi",29,3.12,["Bangla","English","Hindi"]);
+var student2= new Student("Zaman",29.1,3.1,["Bangla","English","Hindi"]);
+var student3= new Student("Arif",29.5,3.124,["Bangla","English","Hindi"]);
+var student4= new Student("Razi",29.7,3.127,["Bangla","English","Hindi"]);
+
+console.log(student2.language);
+console.log(student1.name);
+console.log(student3.age);
+console.log(student4.cgpa);
+
+
+
+
+
+
+/////      Adding function inside a constructor...
+
+
+
+function Student(name,age,cgpa,language){
+    this.name = name;
+    this.age = age;
+    this. cgpa = cgpa;
+    this. language = language;
+    
+
+    this.display=function(){
+        console.log(this.language);
+        console.log(this.name);
+        console.log(this.age);
+        console.log(this.cgpa);
+
+    }
+}
+var student1= new Student("Arif Razi",29,3.12,["Bangla","English","Hindi"]);
+var student2= new Student("Zaman",29.1,3.1,["Bangla","English","Hindi"]);
+var student3= new Student("Arif",29.5,3.124,["Bangla","English","Hindi"]);
+var student4= new Student("Razi",29.7,3.127,["Bangla","English","Hindi"]);
+
+student1.display();
+student2.display();
+student3.display();
+student4.display();
+
+
+
+//////    guessing game using math function   \\\\
+
+
+
+
+var win=0,lose=0;
+for ( var i=1; i<5; i++){
+    var guessNumber=parseFloat(prompt("Enter a number:"));
+    var randamNumber=Math.random()*5;
+    randamNumber=Math.floor(randamNumber)+1;
+    console.log(randamNumber);
+    if(guessNumber==randamNumber){
+        console.log("You Won");
+        win++;
+
+    }
+    else{
+        console.log("You Lose");
+        lose++;
+    }
+}
+document.write("You Win ",win++," Times<br>");
+document.write("You Lose ",lose++," Times");
+
+
+
+
+
+
+///// Playing with Date object in JavaScruipt  \\\\\
+
+
+
+var date = new Date();
+console.log(date);
+var year =  date.getFullYear();
+console.log(year);
+var month =  date.getMonth();
+console.log(month);
+var day =  date.getDay();
+console.log(day);
+var hour =  date.getHours();
+console.log(hour);
+var min =  date.getMinutes();
+console.log(min);
+
+
+
+
+
+//////     Playing with some basic document object model
+
+
+
+
+document.getElementById("dev").innerHTML="I Want To Be A Web Devoloper."
+
+var finishLine=document.getElementById("end");
+finishLine.innerHTML="Please Vanish All Lorem Word";
+
+
+
+
+
+////**** IN CLASS NAME AND TAGNAME WE MUST USE INDEX NUMBER ******\\\\\\
+
+
+
+document.getElementsByClassName("de")[0].innerHTML="Developer"
+document.getElementsByTagName("p")[0].innerHTML="Hellow JAVA"
+
+
+
+
+
+///////**** In quretSelector inn ID we use "#", class ".", tagName keep normal */
+
+document.querySelector("#dev").innerHTML="QureySlector"
+document.querySelector(".de").innerHTML="la la la la la la"
+document.querySelector("p").innerHTML="Java Script"
+
+
+
+
+
+////////   qureySelectorAll we use same index number.also here we see different type of more than class,id,tag usess   \\\\\\\
+
+
+document.querySelector("a").innerHTML="I am Java Script Learner"
+document.querySelector("li a").innerHTML="I am Java Script Learner"
+document.querySelector("h1").innerHTML="I am Java Script Learner"
+document.querySelectorAll("h2")[1].innerHTML="I am Java Script Learner"
+
+
+
+
+
+///////  Event hndeling \\\\\\\
+
+
+
+
+function myFunc(){
+    alert("Call from function");
+}
+
+
+
+function myFunc2(){
+   var myVar= document.querySelector("#paraId");
+   myVar.innerHTML= "Lorem ipsum dolor sit amet consectetur adipisicing.";
+
+}
+
+
+
 
 
 

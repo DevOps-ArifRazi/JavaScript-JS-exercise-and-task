@@ -286,3 +286,64 @@ for(i=0; i<5; i++){
 }
 document.write("Sum is:",sum);
 
+
+
+
+
+
+
+//////     Task no 08 (Print the highest number from an ARRAY using function by user input)
+
+
+
+var j,arreyOneD=[j];
+for (j=0; j<6; j++){
+    arreyOneD[j]=parseFloat(prompt("Enter Number"));
+
+}
+function highestScore(){
+    var max=arreyOneD[0];
+    for ( var i=1; i<arreyOneD.length; i++){
+        if (max<arreyOneD[i]){
+            max=arreyOneD[i];
+        }
+    }
+    return max;
+}
+
+highestScore(arreyOneD);
+document.write(highestScore(arreyOneD));
+
+
+
+
+
+
+
+////////     Task 9 (Find the highestvrun Scorer from two dimentional Arrey)
+
+
+var arreyTwoD=[
+    ["Ashraful",195],
+    ["Sakib",19],
+    ["Musfique",96],
+    ["Mahmudhllah",45],
+    ["Mashrafee",313]
+];
+
+function highestRunScorer(playersInfo){
+var max = arreyTwoD[0][0];
+var maxrun = arreyTwoD[0][1];
+for(var i=1; i<arreyTwoD.length; i++){
+    if(maxrun<arreyTwoD[i][1]){
+        maxrun=arreyTwoD[i][1];
+        max=arreyTwoD[i][0];
+    };
+
+};
+return(max);
+}
+highestRunScorer(arreyTwoD);
+document.write(highestRunScorer(arreyTwoD));
+
+

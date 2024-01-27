@@ -1,3 +1,19 @@
 body{
-    background-color: bisque;
+    background-color: white;
+}
+.styler{
+        box-shadow: 0 16px 32px 0 #FF6347;
+       
+}
+
+.button{
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    margin: 20px;  
+
+}
+.ac{
+    box-shadow: 0 16px 32px 0 #FF6347;
+   
 }

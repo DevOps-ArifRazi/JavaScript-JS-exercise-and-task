@@ -774,4 +774,323 @@ function myFunc2(){
 
 
 
+///////   date 28.01.2024    \\\\\\\
+
+
+
+
+
+
+//////     Adding some text in HTML element through JavaScript   \\\\
+
+
+var heading3=document.createElement("h1");
+var text=document.createTextNode("Practising JavaScript");
+heading3.appendChild(text);
+
+var first= document.getElementById("my-div");
+first.appendChild(heading3);
+     
+
+
+
+
+/////  remove some text from html elememt   \\\\
+
+var removeHeading2=document.getElementsByTagName("h1")[2];
+first.removeChild(removeHeading2);
+
+var heading0=document.createElement("h1");
+var text2= document.createTextNode("Adding Some Thing In first Heading");
+var heading1=document.getElementsByTagName("h1")[1];
+heading0.appendChild(text2);
+first.insertBefore(heading0,heading1)
+*/
+
+
+
+
+///////   IMAGES Slider   \\\\\\\
+
+
+
+var photos=["./images/travel.jpg","./images/italy.jpg","./images/maldives.jpg","./images/brazil.jpg"];
+
+var imgTag=document.querySelector("img");
+
+
+var count=0;
+function next(){
+    imgTag.src=photos[count];
+    count++;
+
+    if(count>=photos.length){
+        count=0;
+        imgTag.src=photos[count];
+    }
+    else{
+        imgTag.src=photos[count];
+    }
+}
+function previous(){
+    count--;
+
+    if(count<0){
+        imgTag.src=photos[count];
+        count=photos.length-1;
+        imgTag.src=photos[count];
+    }
+    else{
+        imgTag.src=photos[count];
+
+    }
+
+}
+
+
+//////  SECOND ITEMS  \\\\\\
+   
+
+var image=["./images/html.png","./images/js.png","./images/node.png","./images/icon-1.png","./images/icon-2.png","./images/icon-3.png"];
+var sorce=document.querySelectorAll("img")[1];
+
+
+var i=0;
+function nextFunc(){
+    sorce.src=image[i]
+    i++;
+    if(i>=image.length){
+     i=0; 
+     sorce.src=image[i];  
+    }
+}
+
+function prevFunc(){
+    sorce.src=image[i]
+    i--;
+    if(i<=0){
+        i=image.length-1;
+        sorce.src=image[i];  
+    }
+
+}
+
+
+
+
+
+
+
+///////////        CSS Style add in JavaScript        \\\\\\\\\
+
+
+
+var arif=document.querySelector("#zarif");
+function styleMe(){
+
+    // arif.style.color="red";
+    // arif.style.fontSize="40px";
+    // arif.style.fontStyle="italic";
+    arif.classList.add("styler");
+
+}
+
+function unStyleMe(){
+    arif.classList.remove("styler");
+    
+}
+
+
+
+///////ADD EVENT LISINER     \\\\\\
+
+
+/// ADDD STYLE
+
+var razi=document.querySelector("#zarif");
+
+razi.addEventListener("mouseover",myFunc);
+function myFunc(){
+    razi.classList.add("styler");
+
+}
+razi.addEventListener("mouseout",myFunc);
+function myFunc(){
+    razi.classList.remove("styler");
+}
+
+
+
+////// ADDD TEXT
+
+
+var btn=document.querySelectorAll(".myButton")[0];
+btn.addEventListener("click",myFunc);
+function myFunc(){
+    var text =this.innerHTML;
+ var btn=document.querySelector("h4");
+ btn.innerHTML=text +" is clicked";
+}
+
+var btn=document.querySelectorAll(".myButton")[1];
+btn.addEventListener("click",myFunc);
+function myFunc(){
+    var text =this.innerHTML;
+ var btn=document.querySelector("h4");
+ btn.innerHTML=text +" is clicked";
+}
+
+var btn=document.querySelectorAll(".myButton")[2];
+btn.addEventListener("click",myFunc);
+function myFunc(){
+    var text =this.innerHTML;
+ var btn=document.querySelector("h4");
+ btn.innerHTML=text +" is clicked";
+}
+
+
+////PLAYING WITH MORE
+
+
+var len=document.querySelectorAll(".myButton").length;
+for(i=0; i<len; i++){
+    var btn=document.querySelectorAll(".myButton")[i];
+btn.addEventListener("click",myFunc);
+function myFunc(){
+    var text =this.innerHTML;
+ var btn=document.querySelector("h4");
+ btn.innerHTML=text +" is clicked";
+}
+
+}
+
+
+
+
+
+
+////// PLAYING AUDIO BY PRESSING BUTTON    \\\\\\\
+
+
+
+var len=document.querySelectorAll(".button").length;
+
+for(var i=0; i<=len; i++){
+    var button=document.querySelectorAll(".button")[i];
+    button.addEventListener("click",myFunc);
+
+function myFunc(){
+    var text=this.innerHTML;
+    console.log(text);  
+
+
+    switch(text){
+
+        case "Sound-1":
+            var audio = new Audio("./sound/realize-your-dreams-187607.mp3");
+            audio.play();
+            break;
+            case "Sound-2":
+                var audio = new Audio("./sound/better-day-186374.mp3");
+                audio.play();
+                break;
+                case "Sound-3":
+                    var audio = new Audio("./sound/mellow-future-bass-bounce-on-it-184234.mp3");
+                    audio.play();
+                    break;
+                    case "Sound-4":
+                        var audio = new Audio("./sound/once-in-paris-168895.mp3");
+                        audio.play();
+                        break;
+                        case "Sound-5":
+                            var audio = new Audio("./sound/good-night-160166.mp3");
+                            audio.play();
+                            break;
+                            case "Sound-6":
+                                var audio = new Audio("./sound/lo-fi-midnight-hip-hop_60sec-187367.mp3");
+                                audio.play();
+                                break;
+                                case "Sound-7":
+                                    var audio = new Audio("./sound/sunshine-bliss-181126.mp3");
+                                    audio.play();
+                                    break;
+
+    }
+}
+
+}
+
+
+
+
+
+////////    SOUND WITH ANIMATION   \\\\\\
+
+
+var len=document.querySelectorAll(".button").length;
+
+for(var i=0; i<=len; i++){
+    var button=document.querySelectorAll(".button")[i];
+    button.addEventListener("click",myFunc);
+
+
+    function myFunc(){
+        var text=this.innerHTML;
+        console.log(text);  
+        audioPlay(text);
+        animationPlay(text);
+
+    }
+}
+
+
+
+
+function audioPlay(text){
+    switch(text){
+
+        case "Sound-1":
+            var audio = new Audio("./sound/realize-your-dreams-187607.mp3");
+            audio.play();
+            break;
+            case "Sound-2":
+                var audio = new Audio("./sound/better-day-186374.mp3");
+                audio.play();
+                break;
+                case "Sound-3":
+                    var audio = new Audio("./sound/mellow-future-bass-bounce-on-it-184234.mp3");
+                    audio.play();
+                    break;
+                    case "Sound-4":
+                        var audio = new Audio("./sound/once-in-paris-168895.mp3");
+                        audio.play();
+                        break;
+                        case "Sound-5":
+                            var audio = new Audio("./sound/good-night-160166.mp3");
+                            audio.play();
+                            break;
+                            case "Sound-6":
+                                var audio = new Audio("./sound/lo-fi-midnight-hip-hop_60sec-187367.mp3");
+                                audio.play();
+                                break;
+                                case "Sound-7":
+                                    var audio = new Audio("./sound/sunshine-bliss-181126.mp3");
+                                    audio.play();
+                                    break;
+
+    }
+}
+
+
+function animationPlay(text){
+  var select= document.querySelector("."+text);
+  select.classList.add("ac");
+}
+
+
+
+
+
+
+
 

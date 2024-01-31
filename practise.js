@@ -973,7 +973,7 @@ function myFunc(){
 
 
 
-var len=document.querySelectorAll(".button").length;
+var len=document.getElementsByClassName("button").length;
 
 for(var i=0; i<=len; i++){
     var button=document.querySelectorAll(".button")[i];
@@ -1027,7 +1027,7 @@ function myFunc(){
 ////////    SOUND WITH ANIMATION   \\\\\\
 
 
-var len=document.querySelectorAll(".button").length;
+var len=document.getElementsByClassName("button").length;
 
 for(var i=0; i<=len; i++){
     var button=document.querySelectorAll(".button")[i];
@@ -1084,8 +1084,416 @@ function audioPlay(text){
 
 function animationPlay(text){
   var select= document.querySelector("."+text);
-  select.classList.add("ac");
+  select.classList.add("anim");
 }
+
+
+
+
+
+/////////   sound    animation    keyboard key press     \\\\\
+
+
+
+var len=document.getElementsByClassName("button").length;
+
+for(var i=0; i<len; i++){
+    var btn=document.querySelectorAll(".button")[i];
+    btn.addEventListener("click",myFunc);
+
+
+    function myFunc(text){
+        var text=this.innerHTML;
+        console.log(text);  
+        audioPlay(text);
+        playAnimation(text);
+
+    }
+}
+
+
+
+document.addEventListener("keypress",function(event){
+    var text=event.key;
+    console.log(text);
+    audioPlay(text);
+    playAnimation(text);
+});
+
+
+
+
+
+function playAnimation(text){
+    var selectedButton = document.querySelector("."+text);
+     selectedButton.classList.add("anim");
+     setTimeout(function(){
+       selectedButton.classList.remove("anim");
+   
+     },2000);
+   }
+
+
+
+
+function audioPlay(text){
+    switch(text){
+        case "a":
+            var audio = new Audio("./sound/realize-your-dreams-187607.mp3");
+            audio.play(1000);
+            break;
+            case "b":
+                var audio = new Audio("./sound/better-day-186374.mp3");
+                audio.play();
+                break;
+                case "c":
+                    var audio = new Audio("./sound/mellow-future-bass-bounce-on-it-184234.mp3");
+                    audio.play();
+                    break;
+                    case "d":
+                        var audio = new Audio("./sound/once-in-paris-168895.mp3");
+                        audio.play();
+                        break;
+                        case "e":
+                            var audio = new Audio("./sound/good-night-160166.mp3");
+                            audio.play();
+                            break;
+                            case "f":
+                                var audio = new Audio("./sound/lo-fi-midnight-hip-hop_60sec-187367.mp3");
+                                audio.play();
+                                break;
+                                case "g":
+                                    var audio = new Audio("./sound/sunshine-bliss-181126.mp3");
+                                    audio.play();
+                                    break;
+
+    }
+    
+
+}
+
+
+
+
+////  how to work on change EVENT in njjava script   \\\\
+
+
+console.clear();
+// var input=document.querySelector("input");
+var input=document.querySelector("input[name=name]");
+//console.log(input);
+input.addEventListener('change',changeHandeler);
+function changeHandeler(e){
+    console.log(e);
+    console.log(e.type);
+     console.log(e.target);
+    console.log(e.target.className);
+       console.log(e.target.id);
+    console.log(e.target.value);
+
+}
+
+
+
+/////     change event on label    \\\\
+
+
+console.clear();
+var input=document.querySelectorAll("input[name=program]");
+console.log(input);
+Array.from(input).map((maping)=>{
+    maping.addEventListener('change',programHandeler)
+    function programHandeler(e){
+        if(e.target.checked)
+        console.log(e.target.value);
+    }
+})
+
+
+
+
+////// change event on Select   \\\\\\
+
+
+
+ var department=document.querySelector("#department");
+ console.log(department);
+ department.addEventListener('change',handleDepartment);
+ function handleDepartment(e){
+    console.log(e.target.value);
+ }
+ 
+
+
+
+
+
+ //////   Form  creation JS data handeling  \\\\\\
+
+
+ const form=document.querySelector("form");
+ const name=form.querySelector("div #name");
+ var email=form.querySelector("div #email");
+ var password=form.querySelector("div #password");
+
+
+
+ //console.log(name);
+
+ form.addEventListener('submit',formHandeler)
+ function formHandeler(e){
+    e.preventDefault();
+    // console.log(name.value);
+    // console.log(email.value);
+    // console.log(password.value);
+
+    const userInfo={
+        name:name.value,
+        email:email.value,
+        password:password.value,
+    }
+    console.log(userInfo);
+    name.value="";
+    email.value="";
+    password.value="";
+
+ }
+ 
+
+
+
+ ////////    Video event object     \\\\\
+
+ // #canplay #play #playing #pause #ended #volumechange
+
+
+ const video = document.querySelector("video");
+ video.addEventListener("canplay",function(){
+    console.log("canplay");
+ });
+ video.addEventListener("play",function(){
+    console.log("play");
+ });
+ video.addEventListener("playing",function(){
+    console.log("playing");
+ });
+ video.addEventListener("pause",function(){
+    console.log("pause");
+ });
+ video.addEventListener("volumechange",function(){
+    console.log("volumechange");
+ });
+ video.addEventListener("ended",function(){
+    console.log("Thanks For Watching.");
+ });
+ 
+
+
+
+
+ //////////    #load #unload #scroll #resize #toggle    \\\\\
+
+
+ window.addEventListener("load",function(){
+    console.log("load");
+ });
+ window.addEventListener("unload",function(){
+    console.log("unload");
+ });
+
+
+
+
+//// scroll
+
+
+window.addEventListener("scroll",function(){
+    console.log("scroll");
+})
+window.addEventListener("resize",function(){
+    console.log("resize");
+})
+
+
+
+
+////////  toggle
+
+const details=document.querySelector("div details");
+details.addEventListener("toggle",function(e){
+    console.log("toggle");
+    console.log(e.target.open);
+})
+
+
+
+
+
+/////// Mouse event   \\\\\\
+
+// #onclick #ondblclick #onmouse #onmouseenter #onmouseleave #onmousemove #onmouseover
+
+/// #onmouseup #onmousedown
+
+
+var squar=document.querySelector("#squar");
+squar.addEventListener("click",function(e){
+    console.log("click");
+    console.log(e);
+    console.log(e.target);
+    console.log(e.target.id);
+    console.log(e.target.className);
+    console.log(e.target.innerHTML);
+    console.log(e.target.textContent);
+    console.log(e.target.innerText);
+
+});
+squar.addEventListener("dblclick",function(){
+    console.log("double click");
+
+});
+squar.addEventListener("mouseup",function(){
+    console.log("mouseup");
+
+});
+squar.addEventListener("mousedown",function(){
+    console.log("mousedown");
+
+});
+squar.addEventListener("mouseenter",function(){
+    console.log("mouseenter");
+
+});
+squar.addEventListener("mouseover",function(){
+    console.log("mouseover");
+
+});
+squar.addEventListener("mouseleave",function(){
+    console.log("mouseleave");
+
+});
+squar.addEventListener("mousemove",function(e){
+    console.log("mousemove");
+    console.log("ClientX: ",e.clientX+"ClientY: ",e.clientY);
+    console.log("offsetX: ",e.offsetX+"offsetY: ",e.offsetY);
+});
+
+
+
+
+//// click event betweeen three button by m,aking map    \\\\\
+
+
+
+
+const buttons=document.querySelectorAll(".btn");
+console.log(buttons);
+Array.from(buttons).map((button) => {
+    button.addEventListener("click",function(e){
+        console.log(e.target.innerText);
+    })
+
+});
+
+
+
+
+
+/////////  event on KEYBOARD KEYS     \\\\\\
+
+
+
+console.clear();
+const text=document.querySelector("div textarea");
+text.addEventListener("keydown",function(e){
+     console.log(e.key);
+    if(e.repeat){
+        alert("Do not Repeat");
+    }
+});
+text.addEventListener("keypress",function(e){
+    console.log(e.key);
+});
+text.addEventListener("keyup",function(e){
+    console.log(e.key);
+});
+
+
+
+
+//   ///     FOCUS EVENT    \\\\\
+
+///   #onblur  #onfocus  #onfocusin  #onfocusout
+
+
+const input=document.querySelector("div #input");
+// input.addEventListener("focus",function(){
+//     // console.log("focus");
+
+// });
+input.addEventListener("focusin",function(){
+    console.log("focus in");
+    input.style.backgroundColor="Orange";
+    input.style.padding="1rem";
+});
+
+// input.addEventListener("blur",function(){
+//     console.log("blar");
+// });
+input.addEventListener("focusout",function(e){
+    console.log("focus out");
+    console.log(e.target.value);
+    input.style.backgroundColor="white";
+    input.style.padding="0rem";
+    input.value=e.target.value.toUpperCase();
+});
+
+
+
+
+//////  #Oncopy  #Oncut   #Onpaste   \\\\\
+
+
+const input=document.querySelector("div #input");
+const p = document.querySelector("div #prgf");
+    input.addEventListener("copy",function(){
+        console.log("You Have Copied");
+        p.innerText=("You Have Copied");
+        });
+    input.addEventListener("cut",function(){
+        console.log("You Have Cut");
+        p.innerText=("You Have Cut");
+        });
+    input.addEventListener("paste",function(){
+        console.log("You Have Pasted");
+        p.innerText=("You Have Pasted");
+        });
+
+
+
+
+
+////////   Drag and  Drop  \\\\\\
+
+
+const drop = document.querySelector("#drop");
+const drag = document.querySelector("#drag");
+drag.addEventListener('dragstart',function(e){
+    let setData=e.dataTransfer.setData("data",e.target.id);
+
+});
+
+drop.addEventListener('dragover',function(e){
+    e.preventDefault();
+});
+
+drop.addEventListener('drop',function(e){
+   let getData = e.dataTransfer.getData("data");
+   console.log(getData);
+   let div=document.getElementById(getData);
+    drop.appendChild(div);
+    e.preventDefault();
+});
 
 
 

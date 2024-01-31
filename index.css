@@ -5,15 +5,39 @@ body{
         box-shadow: 0 16px 32px 0 #FF6347;
        
 }
-
-.button{
+button{
     width: 100px;
     height: 50px;
     padding: 10px;
     margin: 20px;  
+    
 
 }
-.ac{
+.anim{
     box-shadow: 0 16px 32px 0 #FF6347;
+    opacity: 0.5;
    
+}
+.label{
+    padding-bottom: 10px;
+}
+.squar{
+    height: 200px;
+    width: 400px;
+    background-color: aqua;
+}
+.btn{
+    color: bisque;
+    width: 80px;
+    height: 40px;
+    padding: 10px;
+    margin: 20px; 
+    background-color: #FF6347;
+    border-radius: .5rem;
+}
+
+.drop{
+    height: 200px;
+    width: 400px;
+    background-color: aqua;
 }

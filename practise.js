@@ -1500,5 +1500,312 @@ drop.addEventListener('drop',function(e){
 
 
 
+///////       TRY CATCH THROUGH    \\\\\\\\\\
+
+
+var btn=document.querySelector("#check");
+btn.addEventListener("click",function(){
+    var valu=document.querySelector(".try").value;
+    console.log(valu);
+    try{
+        if(valu<5){
+            throw "Input is low."
+        }
+        else if(valu>10){
+            throw "Input is high."
+
+        }
+
+    }
+    catch(err){
+        console.log(err);
+    }
+});
+
+
+
+
+
+
+//////    ES6 function declaration   \\\\\
+
+
+/// ES-5
+
+function add(x,y){
+    let sum = x+y;
+    console.log(sum);
+}
+add(10,15);
+
+
+/// ES-6
+
+const addition = (x, y) =>{
+    let sum=x+y;
+    console.log(sum);
+}
+addition(20,30);
+
+
+
+
+
+/////// Hoisting   \\\\\\\
+
+x=20
+console.log(x);
+var x;
+const x;
+let x;
+
+
+/////  Hoisting example
+x=20
+if(true){
+    y=10
+    console.log(y);
+    var y;
+}
+console.log(x);
+var x;
+
+
+
+/////  "use strict mode"  in this we can not use without declaring a variable
+
+//normal mode
+x=20;
+console.log(x);
+
+
+//use strict mode..
+
+"use strict"
+x=20;
+console.log(`x = ${x}`);
+
+//Aanother Example
+
+"use strict"
+x=20;
+console.log(`x = ${x}`);
+var x;
+
+//Aanother Example
+
+"use strict"
+let x
+x=20;
+console.log(`x = ${x}`);
+
+
+
+
+////// Default & Rest parameters   \\\\
+
+
+///Default parameters...
+
+function display(massage = "I love javascript."){
+    console.log(massage);
+}
+display();
+display("i love bangladesh.");
+
+
+/// Rest parameters...  
+
+function rest(x,y, ...z){
+    console.log(`x = ${x}, y = ${y}, z = ${z}.`);
+}
+rest(10,20,30,40,50,60,70,80,90);
+
+
+
+//////   Spread Operators  \\\
+
+///   Spread operator use at any place any where...
+
+function spread(x,y,z){
+    return(x+y+z);
+}
+let numbers = [1,2,3];
+console.log(numbers);
+console.log(spread(...numbers));
+let numbers2 = [0,...numbers,4,5,6];
+console.log(numbers2);
+console.log(numbers.concat(numbers2));
+console.log(...numbers, ...numbers2);
+
+
+
+///spread operator in an object
+let p1={
+    Name : "Arif Razi",
+    Age : 28
+}
+
+let p2={
+    Nationality : "Bangladeshi",
+    Ocupation : "Programer"
+}
+let p = p1 + p2;
+let q = {...p1, ...p2};
+console.log(p);
+console.log(q);
+
+
+
+
+///////   Object Leterel   \\\\\\
+
+//Traditional Function
+function studentInfo(name,id){
+    return{
+        name : name,
+        id : id
+    }
+}
+console.log(studentInfo("Arif Razi",2));
+
+
+//object litarel
+
+function studentInfo(name,id){
+    return{
+        name,
+        id 
+    }
+}
+console.log(studentInfo("Arif Razi",2));
+
+
+// Another Fuction
+
+let massage = {
+    body :function(){
+        return `hello i am object function`
+    }
+}
+console.log(massage.body())
+
+
+// Another Fuction
+
+let massage = {
+    body (){
+        return `hello i am object function`
+    }
+}
+console.log(massage.body())
+
+
+// Another Fuction
+
+
+let massage = {
+    'body name' :function(){
+        return `hello i am object function`
+    }
+}
+console.log(massage['body name']());
+
+
+// Another Fuction
+
+let massage = {
+    'body name' (){
+        return `hello i am object function`
+    }
+}
+console.log(massage['body name']());
+
+
+
+
+
+//////   for of   &    for in   \\\\\\
+
+
+const names = ["arif", "Zarif", "razi", "faiyaz"];
+for(let name of names){
+    console.log(name);
+}
+console.log(names);
+
+
+//Another Example
+
+let students={
+    name : "arif",
+    id : 2,
+    age : 29
+}
+for(let x in students){
+    console.log(x);
+    console.log(students[x]);
+    console.log(`${x} : ${students[x]}`);
+}
+
+
+
+////////  for each   \\\\\\\
+
+let numbers=[10,20,30,40,50];
+numbers.forEach(myFunction);
+function myFunction(x){
+    console.log(x);
+}
+
+
+// Another Example
+
+let numbers=[10,20,30,40,50];
+numbers.forEach(function(x){
+    console.log(x);
+});
+
+
+
+
+/// take an array and squre them then keep tem another array
+
+let numbers = [1,2,3,4,5];
+let squareNumbers = [];
+numbers.forEach(function(x){
+    squareNumbers.push(x+5);
+})
+console.log(squareNumbers);
+
+
+
+
+///// map and filter function  \\\\\\
+
+///map
+
+let numbers = [1,2,3,4,5,10,23,45,67,9];
+let squareNumbers = numbers.map(function(x){
+    return x*x;
+})
+console.log(squareNumbers);
+
+
+
+
+//// filter  
+
+let numbers = [1,2,3,4,5,10,23,45,67,9];
+let squareNumbers = numbers.filter(function(x){
+    return x<10;
+})
+console.log(squareNumbers);
+
+
+
+
+
+
 
 

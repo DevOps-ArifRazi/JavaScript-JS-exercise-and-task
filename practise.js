@@ -1803,6 +1803,791 @@ let squareNumbers = numbers.filter(function(x){
 console.log(squareNumbers);
 
 
+//Traditional function
+
+function display1(){
+    console.log("I am display 1");
+}
+display1()
+
+//Arrow funtion
+const display2=()=> {
+    console.log("I am display 2");
+}
+display2()
+
+//Arrow Function
+const display3=()=> 
+    console.log("I am display 3");
+display3()
+
+//Arrow Function
+const display4=()=>"I am display 4";
+console.log(display4);
+
+// Traditional Function
+
+function add1(num1,num2){
+   return num1+num2;
+}
+console.log(add1(20,30));
+
+ // Arrow function
+ const add2=(num1,num2)=>{
+    return num1+num2;
+ }
+ console.log(add2(10,20));
+
+ //Arrow function
+ const add3=(num1,num2)=> num1+num2;
+ console.log(add3(100,200));
+
+
+
+///   Using filter and map function in Traaditional function and arrow function
+
+let students = [
+    {
+        name:"arif",
+        id:1,
+        cgpa:2.22
+    },
+    {
+        name:"zarif",
+        id:2,
+        cgpa:3.22
+    },
+    {
+        name:"arsiya",
+        id:3,
+        cgpa:4.22
+    },
+    {
+        name:"razi",
+        id:4,
+        cgpa:3.56
+    },
+    {
+        name:"zuyaina",
+        id:5,
+        cgpa:4.12
+    }
+] 
+console.log(students);
+
+
+
+//using traditional function
+
+function studentInfo(){
+    return students.filter(function (x){
+        return x.cgpa >4;
+    }).map(function(y){
+        return y.name;
+    });
+
+}
+console.log(studentInfo());
+
+
+//Using Arrow Function
+const studentInfo2=()=>students.filter((c)=>c.cgpa>3).map((z)=>z.id);
+console.log(studentInfo2());
+
+
+
+
+// Array Destructure
+ 
+let numbers = [20,30,40,50,60,70];
+let [num1,num2,num3,num4,num5,mum6]=numbers;
+console.log(numbers[4]);
+console.log(num4);
+
+
+// Destructure in spred operator
+
+let numbers = [10,20,30,40,50,60];
+let [x,y, ...z] = numbers;
+console.log(x);
+console.log(y);
+console.log(...z);
+
+
+//Destructure in object
+
+const studentInfo = {
+    name:"Arif",
+    id:131,
+    cgpa:2.67
+}
+// console.log(studentInfo.name);
+// console.log(studentInfo.id);
+// console.log(studentInfo.cgpa);
+const {name,id,cgpa}=studentInfo
+console.log(name);
+console.log(id);
+console.log(cgpa);
+
+
+
+//Destructure in function
+
+const student = {
+    name:"arif",
+    id:141,
+    cgpa:3.33
+}
+// const studentInfo = (student) =>{
+//     console.log(student.name);
+// }
+// studentInfo(student);
+const studentInfo = ({name,id,cgpa}) =>{
+    console.log(name);
+    console.log(id);
+    console.log(cgpa);
+
+}
+studentInfo(student);
+
+
+
+// Find method in an Array
+
+//find first even number and his index number also..
+
+let numbers = [11,5,99,25,55,12,6,87];
+const evenNumber = numbers.find((x) => x%2===0);
+const evenNumberIndex = numbers.findIndex((x) => x%2===0);
+console.log(evenNumber);
+console.log(evenNumberIndex);
+ 
+
+
+///Using Find method in an Array object to find first cgpa above 4
+
+const student = [
+    {
+        name : "Arif",
+        id : 101,
+        cgpa : 3.2
+    },
+    {
+        name : "Zarif",
+        id : 102,
+        cgpa : 4.0
+    },
+    {
+        name : "Razi",
+        id : 103,
+        cgpa : 4.2
+    },
+    {
+        name : "Faiyaz",
+        id : 104,
+        cgpa : 3.7
+    },
+    {
+        name : "Erfan",
+        id : 105,
+        cgpa : 5.1
+    },
+]
+const studentInfo = student.find((x) => x.cgpa>5);
+console.log(studentInfo);
+
+  
+ /////   Synchoronous asynchornous  function
+
+ // Synchornous function
+ 
+ const taskOne = () =>{
+    console.log("This is task-1")
+ }
+
+ const taskTwo = () =>{
+    console.log("This is task-2")
+ }
+
+ const taskThree = () =>{
+    console.log("This is task-3")
+ }
+
+ const taskFour = () =>{
+    console.log("This is task-4")
+ }
+
+ const taskFive = () =>{
+    console.log("This is task-5")
+ }
+
+ const taskSix = () =>{
+    console.log("This is task-6")
+ }
+ taskOne ()
+ taskTwo ()
+ taskThree ()
+ taskFour ()
+ taskFive ()
+ taskSix ()
+ 
+
+
+ // Asynchornous function
+ 
+ const taskOne = () =>{
+    console.log("This is task-1")
+ };
+ const dataLoading = () =>{
+    console.log("This is task-2")
+ };
+
+ const taskTwo = () =>{
+    setTimeout(dataLoading,2000); 
+ };
+
+ const taskThree = () =>{
+    console.log("This is task-3")
+ };
+
+ const taskFour = () =>{
+    console.log("This is task-4")
+ };
+
+ const taskFive = () =>{
+    console.log("This is task-5")
+ };
+
+ const taskSix = () =>{
+    console.log("This is task-6")
+ };
+ taskOne ();
+ taskTwo ();
+ taskThree ();
+ taskFour ();
+ taskFive ();
+ taskSix ();
+ 
+
+
+ // Asynchornous  with anonimus function
+ 
+ const taskOne = () =>{
+    console.log("This is task-1")
+ };
+
+ const taskTwo = () =>{
+    setTimeout(()=>{
+        console.log("this is task-2")
+    },3000); 
+ };
+
+ const taskThree = () =>{
+    console.log("This is task-3")
+ };
+
+ const taskFour = () =>{
+    console.log("This is task-4")
+ };
+
+ const taskFive = () =>{
+    console.log("This is task-5")
+ };
+
+ const taskSix = () =>{
+    console.log("This is task-6")
+ };
+ taskOne ();
+ taskTwo ();
+ taskThree ();
+ taskFour ();
+ taskFive ();
+ taskSix ();
+ 
+
+
+ //////  Call back function   \\\\\\
+ 
+ const square = (x) =>{
+    console.log(`Square of ${x} : ${x*x}`);
+ }
+//  square(5);
+
+
+// const y = square;
+// y(5);
+
+const higherOrderFunction = (num,callback) =>{
+    callback(num);
+}
+higherOrderFunction(6,square);
+
+  
+   /// callback Function
+
+const taskOne = (callback) =>{
+    console.log("This is task-1")
+    callback();
+ };
+
+ const taskTwo = (callback) =>{
+    setTimeout(()=>{
+        console.log("this is task-2")
+        callback();
+    },3000); 
+ };
+
+ const taskThree = (callback) =>{
+    console.log("This is task-3")
+    callback();
+ };
+
+ const taskFour = (callback) =>{
+    console.log("This is task-4")
+    callback();
+ };
+
+ const taskFive = (callback) =>{
+    console.log("This is task-5")
+    callback();
+ };
+
+ const taskSix = () =>{
+    console.log("This is task-6")
+ };
+ taskOne (() =>{
+    taskTwo(() =>{
+        taskThree(() => {
+            taskFour(() => {
+                taskFive(() => {
+                    taskSix();
+                });
+            });
+        });
+    });
+ });
+ 
+
+ //console.log("Welcome to check.js");
+
+
+// How to create a promise.......
+// pending,resolve,reject
+
+const promise1 = new Promise((resolve,reject) => {
+    let completedPromise = true;
+    if(completedPromise){
+        resolve("Completed promise 1");
+    }
+    else{
+        reject("Not Completed promise 1");
+    }
+
+});
+const promise2 = new Promise ((resolve,reject)=>{
+    resolve("Completed Promise 2");
+})
+//console.log(promise1);
+// promise1.then((res)=>{
+//     console.log(res);
+// });
+// promise1.catch((err)=>{
+//     console.log(err);
+// });
+// promise2.then((ress)=>{
+//     console.log(ress)
+// });
+// Promise.all([promise1, promise2]).then((res) => {
+//     console.log(res)
+// });
+Promise.all([promise1, promise2]).then((res1,res2) => {
+    console.log(res1,res2)
+});
+console.log("Goodbye from check.js");
+
+
+//// setTimeout
+
+const promise1 = new Promise((resolve,reject) => {
+    setTimeout(()=>{
+        resolve("Completed promise 1");
+    },3000)
+});
+const promise2 = new Promise ((resolve,reject)=>{
+setTimeout(()=>{
+    resolve("Completed Promise 2");
+},1000)
+});
+
+Promise.race([promise1, promise2]).then((res) => {
+    console.log(res)
+});
+
+
+
+
+const  taskOne = () => {
+    return new Promise ((resolve,reject)=>{
+        resolve("Task 1 is Completed")
+    });
+};
+
+const  taskTwo = () => {
+    return new Promise ((resolve,reject)=>{
+        reject("Task 2 is Not Completed")
+    });
+};
+
+const  taskThree = () => {
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("Task 3 is Completed")
+        },3000)
+
+    });
+};
+
+const  taskFour = () => {
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("Task 4 is Completed")
+        },4000)
+    });
+};
+
+taskOne()
+.then((res)=>{console.log(res)})
+.then(taskTwo)
+.then((res)=>{console.log(res)})
+.then(taskThree)
+.then((res)=>{console.log(res)})
+.then(taskFour)
+.then((res)=>{console.log(res)})
+.catch(err=>{console.log(err)})
+
+
+
+const  taskOne = () => {
+    return new Promise ((resolve,reject)=>{
+        resolve("Task 1 is Completed")
+    });
+};
+
+const  taskTwo = () => {
+    return new Promise ((resolve,reject)=>{
+        resolve("Task 2 is Completed")
+    });
+};
+
+const  taskThree = () => {
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            reject("Task 3 is not finished")
+        },3000)
+
+    });
+};
+
+const  taskFour = () => {
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("Task 4 is Completed")
+        },4000)
+    });
+};
+
+async function callAllTasks(){
+    const t1 = await taskOne();
+    console.log(t1);
+    const t2 = await taskTwo();
+    console.log(t2);
+    const t3 = await taskThree();
+    console.log(t3);
+    const t4 = await taskFour();
+    console.log(t4);
+}
+callAllTasks()
+
+
+////async-await try catch function
+
+
+const  taskOne = () => {
+    return new Promise ((resolve,reject)=>{
+        resolve("Task 1 is Completed")
+    });
+};
+const  taskTwo = () => {
+    return new Promise ((resolve,reject)=>{
+        resolve("Task 2 is Completed")
+    });
+};
+
+const  taskThree = () => {
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            reject("Task 3 is not finished")
+        },3000)
+
+    });
+};
+
+const  taskFour = () => {
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("Task 4 is Completed")
+        },4000)
+    });
+};
+
+async function callAllTasks(){
+try{
+    const t1 = await taskOne();
+    console.log(t1);
+    const t2 = await taskTwo();
+    console.log(t2);
+    const t3 = await taskThree();
+    console.log(t3);
+    const t4 = await taskFour();
+    console.log(t4);
+}
+catch(err){
+    console.log(err)
+}
+}
+callAllTasks()
+
+
+
+
+//// XMLhttp request
+
+
+const makeRequest = (method, url, data) =>{
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = () =>{
+        let data =xhr.response;
+        console.log(JSON.parse(data));
+    }
+    xhr.onerror = () =>{
+        console.log("Error is here");
+    }
+    xhr.send(JSON.stringify(data));
+
+}
+
+
+const getData = () => {
+
+makeRequest('Get','https://jsonplaceholder.typicode.com/posts');
+
+}
+getData();
+
+
+ const sendData = () => {
+    
+    makeRequest('POST','https://jsonplaceholder.typicode.com/posts',{
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+      })
+
+}
+sendData();   
+
+
+const updateData = () => {
+    
+    makeRequest('PUT','https://jsonplaceholder.typicode.com/posts/1',{
+        id: 1,
+        title: 'foomaa',
+        body: 'barmaa',
+        userId: 1,
+      })
+}   
+updateData();
+
+
+
+const updateSingleData = () => {
+    
+    makeRequest('PATCH','https://jsonplaceholder.typicode.com/posts/1',{
+    
+        title: 'Hello JavaScript',
+      })
+}   
+updateSingleData();
+
+
+
+
+const deleteData = () => {
+    
+    makeRequest('DELETE','https://jsonplaceholder.typicode.com/posts/1')
+}   
+deleteData();
+ 
+
+
+
+
+
+//// XMLHttp request using promise
+
+const makeRequest = (method, url, data) =>{
+ return new Promise(() => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = () =>{
+        let data =xhr.response;
+        console.log(JSON.parse(data));
+    }
+    xhr.onerror = () =>{
+        console.log("Error is here");
+    }
+    xhr.send(JSON.stringify(data));
+ });
+
+}
+
+
+//////// axios
+
+const getData = () => {
+
+makeRequest('Get','https://jsonplaceholder.typicode.com/posts')
+.then((res) => {
+    console.log(res);
+});
+
+}
+getData();
+
+
+axios
+//.get("https://jsonplaceholder.typicode.com/posts")
+.then((res) => {console.log(res.data)})
+.catch((err) => {console.log(err)});
+
+
+
+.delete("https://jsonplaceholder.typicode.com/posts/1")
+.then((res) => {console.log(res.data)})
+.catch((err) => {console.log(err)});
+
+
+
+
+.patch("https://jsonplaceholder.typicode.com/posts/1", {
+    method: 'PATCH',
+    body: JSON.stringify({
+      body: 'barmaabaha',
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+.then((res) => {console.log(res.data)})
+.catch((err) => {console.log(err)});
+
+
+.put("https://jsonplaceholder.typicode.com/posts/1", {
+    method: 'PUT',
+    body: JSON.stringify({
+      id:1,
+      title: 'foomaaba',
+      body: 'barmaaba',
+      userId: 1,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+.then((res) => {console.log(res.data)})
+.catch((err) => {console.log(err)});
+
+
+
+.post("https://jsonplaceholder.typicode.com/posts", {
+    method: 'POST',
+    body: JSON.stringify({
+      title: 'foomaa',
+      body: 'barmaa',
+      userId: 1,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+.then((res) => {console.log(res.data)})
+.catch((err) => {console.log(err)});
+
+
+
+const makeRequest = async (config) => {
+    return await axios(config);
+};
+
+
+const deleteData = () => {
+    makeRequest({
+        url:"https://jsonplaceholder.typicode.com/posts/2",
+        method:"DELETE"
+    })
+    .then((res) => {console.log(res)})
+    .catch((err) => {console.log(err)});
+};
+deleteData();
+
+
+
+const updateData = () => {
+    makeRequest({
+        url:"https://jsonplaceholder.typicode.com/posts/2",
+        method:"PUT",
+        data:JSON.stringify({
+            id:"101",
+            title: 'foomaa',
+            body: 'barmaa',
+            userId: 1,
+          }),
+    })
+    .then((res) => {console.log(res)})
+    .catch((err) => {console.log(err)});
+};
+updateData();
+
+
+
+const createData = () => {
+    makeRequest({
+        url:"https://jsonplaceholder.typicode.com/posts",
+        method:"POST",
+        data:JSON.stringify({
+            title: 'foomaa',
+            body: 'barmaa',
+            userId: 1,
+          }),
+    })
+    .then((res) => {console.log(res)})
+    .catch((err) => {console.log(err)});
+};
+createData();
+
+
+
+const getData = () => {
+    makeRequest("https://jsonplaceholder.typicode.com/posts")
+    .then((res) => {console.log(res)})
+    .catch((err) => {console.log(err)});
+};
+getData();
+
+
 
 
 
